@@ -1,0 +1,123 @@
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: var(--bg-primary);
+
+    padding: 0 50px;
+
+    height: 70px;
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.logo {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+.menu {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border-bottom: none;
+
+}
+
+.menu .ant-menu-item {
+
+    color: var(--text-primary) !important;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+}
+
+.menu .ant-menu-item:hover {
+
+    color: var(--primary) !important;
+
+}
+
+.menu .ant-menu-item-selected {
+
+    color: var(--primary) !important;
+
+    border-bottom: 2px solid var(--primary) !important;
+
+}
+
+.auth-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+.auth-buttons .ant-btn {
+
+    border-radius: 8px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+
+}
+
+.auth-buttons .ant-btn-default {
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+
+}
+
+.auth-buttons .ant-btn-default:hover {
+
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+}
+
+.auth-buttons .ant-btn-primary {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+}
+
+.auth-buttons .ant-btn-primary:hover {
+
+    background: var(--primary-hover) !important;
+
+    border-color: var(--primary-hover) !important;
+
+}

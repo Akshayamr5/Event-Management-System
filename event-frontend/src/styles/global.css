@@ -1,0 +1,33 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    background:var(--bg-primary);
+
+    color:var(--text-primary);
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+section{
+
+    width:100%;
+
+}

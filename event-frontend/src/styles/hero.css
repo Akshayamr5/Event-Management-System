@@ -1,0 +1,137 @@
+.hero {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(8,8,8,0.75), rgba(8,8,8,0.75)),
+        url("https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 20px;
+
+}
+
+.hero-overlay {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.hero-content {
+
+    max-width: 900px;
+
+    text-align: center;
+
+    color: var(--text-primary);
+
+}
+
+.hero-content h1 {
+
+    font-size: 72px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+
+}
+
+.hero-content p {
+
+    font-size: 22px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+.hero-buttons .ant-btn {
+
+    min-width: 180px;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+.hero-buttons .ant-btn-primary {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+}
+
+.hero-buttons .ant-btn-primary:hover {
+
+    background: var(--primary-hover) !important;
+
+    border-color: var(--primary-hover) !important;
+
+}
+
+.hero-buttons .ant-btn-default {
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+
+}
+
+.hero-buttons .ant-btn-default:hover {
+
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+}

@@ -1,0 +1,50 @@
+.footer {
+
+    background: var(--bg-footer);
+
+    padding: 80px;
+
+    color: var(--text-primary);
+
+}
+
+.footer h2,
+.footer h3 {
+
+    margin-bottom: 20px;
+
+    color: var(--text-primary);
+
+}
+
+.footer p {
+
+    color: var(--text-secondary);
+
+    margin-bottom: 12px;
+
+    transition: var(--transition);
+
+}
+
+.footer p:hover {
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+}
+
+.footer-bottom {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+}

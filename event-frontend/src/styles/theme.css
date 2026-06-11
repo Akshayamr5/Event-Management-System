@@ -1,0 +1,86 @@
+:root {
+
+    /* ==========================
+       Background Colors
+    ========================== */
+
+    --bg-primary: #0B0B0B;
+
+    --bg-secondary: #121212;
+
+    --bg-tertiary: #181818;
+
+    --bg-card: #202020;
+
+    --bg-footer: #080808;
+
+
+    /* ==========================
+       Primary Colors
+    ========================== */
+
+    --primary: #1677ff;
+
+    --primary-hover: #4096ff;
+
+    --primary-light: #69b1ff;
+
+
+    /* ==========================
+       Text Colors
+    ========================== */
+
+    --text-primary: #ffffff;
+
+    --text-secondary: #bfbfbf;
+
+    --text-muted: #8c8c8c;
+
+
+    /* ==========================
+       Border Colors
+    ========================== */
+
+    --border: #2d2d2d;
+
+    --border-hover: #404040;
+
+
+    /* ==========================
+       Status Colors
+    ========================== */
+
+    --success: #52c41a;
+
+    --warning: #faad14;
+
+    --danger: #ff4d4f;
+
+
+    /* ==========================
+       Shadows
+    ========================== */
+
+    --shadow: 0 8px 25px rgba(0,0,0,.35);
+
+    --shadow-hover: 0 12px 30px rgba(0,0,0,.45);
+
+
+    /* ==========================
+       Border Radius
+    ========================== */
+
+    --radius-sm: 8px;
+
+    --radius-md: 12px;
+
+    --radius-lg: 18px;
+
+
+    /* ==========================
+       Transition
+    ========================== */
+
+    --transition: all 0.3s ease;
+
+}
