@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Layout,
   Card,
@@ -11,50 +11,87 @@ import {
   Modal,
   Typography,
   Skeleton,
+  message,
 } from "antd";
 import { SearchOutlined, LeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { getAllEvents } from "../../services/eventApi";
 
 // Importing your existing layout components
 import Navbar from "../../components/layout/navbar";
 import Sidebar from "../../components/layout/sidebar";
 import Footer from "../../components/layout/footer";
 
-const { Content } = Layout;
 const { Title } = Typography;
 
 const Events = () => {
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [loading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [events, setEvents] = useState([]);
   const [collapsed, setCollapsed] = useState(false);
 
-  // Mock Data
-  const events = [
-    {
-      id: 1,
-      title: "Royal Wedding Expo",
-      category: "Wedding",
-      manager: "John Events",
-      loc: "Kochi",
-      date: "2026-07-15",
-      price: "₹15000",
-      status: "Approved",
-    },
-  ];
+  const fetchEvents = async () => {
+    try {
+      setLoading(true);
+
+      const { data } = await getAllEvents();
+
+      if (!data.success) {
+        throw new Error(data.message);
+      }
+
+      const eventData = data.events.map((event) => ({
+        ...event,
+        key: event._id,
+      }));
+
+      setEvents(eventData);
+    } catch (error) {
+      console.error(error);
+
+      message.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to load events",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  // Mock Data deleted ...
 
   const columns = [
     { title: "Title", dataIndex: "title", key: "title" },
     { title: "Category", dataIndex: "category", key: "category" },
-    { title: "Manager", dataIndex: "manager", key: "manager" },
-    { title: "Location", dataIndex: "loc", key: "loc" },
+    {
+      title: "Manager",
+      key: "manager",
+      render: (_, record) => record.manager?.name || "N/A",
+    },
+    { title: "Location", dataIndex: "location", key: "location" },
     {
       title: "Status",
       dataIndex: "status",
       key: "status",
       render: (status) => (
-        <Tag color={status === "Approved" ? "green" : "gold"}>{status}</Tag>
+        <Tag
+          color={
+            status === "approved"
+              ? "green"
+              : status === "rejected"
+                ? "red"
+                : "gold"
+          }
+        >
+          {status?.toUpperCase()}
+        </Tag>
       ),
     },
     {
@@ -142,11 +179,12 @@ const Events = () => {
               border: "1px solid var(--border)",
             }}
           >
-            {loading ? (
-              <Skeleton active />
-            ) : (
-              <Table columns={columns} dataSource={events} rowKey="id" />
-            )}
+            <Table
+              columns={columns}
+              dataSource={events}
+              rowKey="_id"
+              loading={loading}
+            />
           </Card>
         </main>
       </div>
@@ -166,8 +204,40 @@ const Events = () => {
             <p>
               <strong>Category:</strong> {selectedEvent.category}
             </p>
+
             <p>
-              <strong>Location:</strong> {selectedEvent.loc}
+              <strong>Description:</strong> {selectedEvent.description}
+            </p>
+
+            <p>
+              <strong>Manager:</strong> {selectedEvent.manager?.name}
+            </p>
+
+            <p>
+              <strong>Date:</strong>{" "}
+              {new Date(selectedEvent.eventDate).toLocaleDateString()}
+            </p>
+
+            <p>
+              <strong>Price:</strong> ₹{selectedEvent.price}
+            </p>
+
+            <p>
+              <strong>Status:</strong>{" "}
+              <Tag
+                color={
+                  selectedEvent.status === "approved"
+                    ? "green"
+                    : selectedEvent.status === "rejected"
+                      ? "red"
+                      : "gold"
+                }
+              >
+                {selectedEvent.status?.toUpperCase()}
+              </Tag>
+            </p>
+            <p>
+              <strong>Location:</strong> {selectedEvent.location}
             </p>
             <Button block type="primary" onClick={() => setModalVisible(false)}>
               Close
