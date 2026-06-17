@@ -18,14 +18,8 @@ const userSchema = new mongoose.Schema(
 
     password: {
       type: String,
-      required: [true, "Password is required"],
+      required: [true, "Eneter your password!!"],
       minlength: 6,
-    },
-
-    role: {
-      type: String,
-      enum: ["superadmin", "eventmanager", "client"],
-      default: "client",
     },
 
     phone: {
@@ -33,9 +27,49 @@ const userSchema = new mongoose.Schema(
       default: "",
     },
 
+    role: {
+      type: String,
+      enum: ["client", "eventManager", "superAdmin"],
+      default: "client",
+    },
+
+    // Only for Event Managers
+
+    companyName: {
+      type: String,
+      default: "",
+    },
+
+    // Super Admin Approval
+
+    approvalStatus: {
+      type: String,
+      enum: ["pending", "approved", "rejected"],
+      default: "pending",
+    },
+
+    // Status specifically for Event Managers
+    status: {
+      type: String,
+      enum: ["pending", "approved", "rejected"],
+      default: "pending",
+    },
+
     subscriptionStatus: {
-      type: Boolean,
-      default: false,
+      type: String,
+      enum: ["inactive", "active"],
+      default: "inactive",
+    },
+
+    managerType: {
+      type: String,
+      enum: ["host", "organizer", ""],
+      default: "",
+    },
+
+    portfolioLink: {
+      type: String,
+      default: "",
     },
 
     profileImage: {
@@ -45,7 +79,7 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 module.exports = mongoose.model("User", userSchema);

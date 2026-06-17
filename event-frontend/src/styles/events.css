@@ -1,0 +1,33 @@
+.events-page {
+
+    min-height: 100vh;
+
+    background: var(--bg-primary);
+
+    padding: 100px 80px;
+
+}
+
+.events-page h1 {
+
+    text-align: center;
+
+    color: var(--text-primary);
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+
+}
+
+.events-page p {
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 50px;
+
+    font-size: 18px;
+
+}

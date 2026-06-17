@@ -1,0 +1,106 @@
+.register-page {
+
+    background: var(--bg-primary);
+
+    min-height: 100vh;
+
+}
+
+.register-container {
+
+    min-height: 85vh;
+
+    padding: 60px 20px;
+
+}
+
+.register-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    padding: 20px;
+
+}
+
+.register-card .ant-typography {
+
+    color: var(--text-primary);
+
+    text-align: center;
+
+}
+
+.register-subtitle {
+
+    display: block;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 30px;
+
+}
+
+.register-form .ant-form-item-label > label {
+
+    color: var(--text-primary);
+
+}
+
+.register-form .ant-input,
+.register-form .ant-input-password {
+
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-primary);
+
+}
+
+.register-form .ant-input::placeholder {
+
+    color: var(--text-secondary);
+
+}
+
+.register-form .ant-btn {
+
+    height: 45px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+.register-footer {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: var(--text-secondary);
+
+}
+
+.register-footer a {
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+}
+
+.register-footer a:hover {
+
+    color: var(--primary-hover);
+
+}

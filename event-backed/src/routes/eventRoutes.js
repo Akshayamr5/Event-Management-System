@@ -1,8 +1,11 @@
 const express = require("express");
 
+const router = express.Router();
+
 const {
   createEvent,
   getAllEvents,
+  getMyEvents,
   getEventById,
   updateEvent,
   deleteEvent,
@@ -15,8 +18,6 @@ const {
   authorizeRoles,
 } = require("../middlewares/authMiddleware");
 
-const router = express.Router();
-
 // ======================================
 // Public Routes
 // ======================================
@@ -24,55 +25,57 @@ const router = express.Router();
 // Get all approved events
 router.get("/", getAllEvents);
 
-// Get single event
-router.get("/:id", getEventById);
-
 // ======================================
 // Event Manager Routes
 // ======================================
 
-// Create new event
-router.post(
-  "/",
+// Get Logged In Manager Events
+router.get(
+  "/my-events",
   authMiddleware,
   authorizeRoles("eventmanager"),
-  createEvent
+  getMyEvents,
 );
 
-// Update event
-router.put(
-  "/:id",
-  authMiddleware,
-  authorizeRoles("eventmanager", "superadmin"),
-  updateEvent
-);
+// Create Event
+router.post("/", authMiddleware, authorizeRoles("eventmanager"), createEvent);
 
-// Delete event
+// Update Event
+router.put("/:id", authMiddleware, authorizeRoles("eventmanager"), updateEvent);
+
+// Delete Event
 router.delete(
   "/:id",
   authMiddleware,
-  authorizeRoles("eventmanager", "superadmin"),
-  deleteEvent
+  authorizeRoles("eventmanager"),
+  deleteEvent,
 );
 
 // ======================================
 // Super Admin Routes
 // ======================================
 
-// Approve event
-router.put(
-  "/:id/approve",
+// Approve Event
+router.patch(
+  "/approve/:id",
   authMiddleware,
   authorizeRoles("superadmin"),
-  approveEvent
+  approveEvent,
 );
 
-// Reject event
-router.put(
-  "/:id/reject",
+// Reject Event
+router.patch(
+  "/reject/:id",
   authMiddleware,
   authorizeRoles("superadmin"),
-  rejectEvent
+  rejectEvent,
 );
+
+// ======================================
+// Public Route
+// ======================================
+
+// Get Single Event
+router.get("/:id", getEventById);
 
 module.exports = router;

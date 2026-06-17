@@ -1,5 +1,7 @@
 const express = require("express");
 
+const router = express.Router();
+
 const {
   registerUser,
   loginUser,
@@ -8,25 +10,14 @@ const {
 
 const {
   authMiddleware,
+  authorizeRoles,
 } = require("../middlewares/authMiddleware");
 
-const router = express.Router();
-
-// =============================
 // Public Routes
-// =============================
-
-// Register User
 router.post("/register", registerUser);
-
-// Login User
 router.post("/login", loginUser);
 
-// =============================
-// Protected Routes
-// =============================
-
-// Get Logged In User Profile
+// Protected Route
 router.get("/profile", authMiddleware, getProfile);
 
 module.exports = router;

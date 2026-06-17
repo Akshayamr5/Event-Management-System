@@ -11,11 +11,9 @@ const createEvent = async (req, res) => {
       manager: req.user.id,
     });
 
-    res.status(201).json({
-      success: true,
-      message: "Event created successfully",
-      event,
-    });
+    res
+      .status(201)
+      .json({ success: true, message: "Event created successfully", event });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -32,7 +30,7 @@ const getAllEvents = async (req, res) => {
   try {
     const events = await Event.find({
       status: "approved",
-    }).populate("manager", "name email");
+    }).populate("manager", "name email companyName profileImage");
 
     res.status(200).json({
       success: true,
@@ -48,6 +46,28 @@ const getAllEvents = async (req, res) => {
 };
 
 // ======================================
+// Get Logged In Manager Events
+// ======================================
+
+const getMyEvents = async (req, res) => {
+  try {
+    const events = await Event.find({
+      manager: req.user.id,
+    }).populate("manager", "name email companyName profileImage");
+
+    res.status(200).json({
+      success: true,
+      count: events.length,
+      events,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+// ======================================
 // Get Single Event
 // ======================================
 
@@ -55,7 +75,7 @@ const getEventById = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id).populate(
       "manager",
-      "name email"
+      "name email companyName profileImage portfolioLink",
     );
 
     if (!event) {
@@ -92,13 +112,21 @@ const updateEvent = async (req, res) => {
       });
     }
 
+    // Only event owner can update
+    if (event.manager.toString() !== req.user.id) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to update this event",
+      });
+    }
+
     const updatedEvent = await Event.findByIdAndUpdate(
       req.params.id,
       req.body,
       {
         new: true,
         runValidators: true,
-      }
+      },
     );
 
     res.status(200).json({
@@ -126,6 +154,14 @@ const deleteEvent = async (req, res) => {
       return res.status(404).json({
         success: false,
         message: "Event not found",
+      });
+    }
+
+    // Only event owner can delete
+    if (event.manager.toString() !== req.user.id) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to delete this event",
       });
     }
 
@@ -210,6 +246,7 @@ const rejectEvent = async (req, res) => {
 module.exports = {
   createEvent,
   getAllEvents,
+  getMyEvents,
   getEventById,
   updateEvent,
   deleteEvent,

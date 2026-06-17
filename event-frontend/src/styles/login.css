@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Login Page Styles - EventSphere Dark Theme
+   ========================================================================== */
+
+.login-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow) !important;
+  padding: 20px;
+}
+
+.login-title {
+  color: var(--text-primary) !important;
+  text-align: center;
+  margin-bottom: 8px !important;
+}
+
+.login-subtitle {
+  color: var(--text-secondary) !important;
+  display: block;
+  text-align: center;
+  margin-bottom: 24px !important;
+}
+
+/* Input Styling */
+.custom-input {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.custom-input .ant-input,
+.custom-input .ant-input-password input {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+.custom-input:hover,
+.custom-input:focus-within {
+  border-color: var(--primary) !important;
+}
+
+/* Icon Color inside Inputs */
+.custom-input .anticon {
+  color: var(--text-secondary) !important;
+}
+
+/* Button Styling */
+.custom-button {
+  background: var(--primary) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: var(--transition) !important;
+  border: none !important;
+}
+
+.custom-button:hover {
+  background: var(--primary-hover) !important;
+}
+
+/* Footer Styling */
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Ant Design Form Label Override */
+.ant-form-item-label > label {
+  color: var(--text-secondary) !important;
+}

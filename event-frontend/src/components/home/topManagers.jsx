@@ -1,70 +1,117 @@
-import { Card, Button, Row, Col, Rate } from "antd";
+import { Row, Col } from "antd";
+import { Link } from "react-router-dom";
+import { ArrowRightOutlined } from "@ant-design/icons";
+
 import "../../styles/topManagers.css";
 
+const MANAGERS = [
+  {
+    id: 1,
+    name: "Elite Events",
+    subtitle: "Luxury Wedding Experiences",
+    count: "150+ Celebrations",
+    image:
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1000&q=80",
+    href: "/event-managers/1",
+  },
+
+  {
+    id: 2,
+    name: "Dream Creators",
+    subtitle: "Corporate & Brand Events",
+    count: "120+ Events",
+    image:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1000&q=80",
+    href: "/event-managers/2",
+  },
+
+  {
+    id: 3,
+    name: "Royal Moments",
+    subtitle: "Birthday & Private Celebrations",
+    count: "200+ Memories",
+    image:
+      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1000&q=80",
+    href: "/event-managers/3",
+  },
+];
+
 function TopManagers() {
-
-  const managers = [
-    {
-      id: 1,
-      name: "Elite Events",
-      specialization: "Wedding Planner",
-      rating: 5,
-      image: "https://picsum.photos/400/300?random=1",
-    },
-
-    {
-      id: 2,
-      name: "Dream Creators",
-      specialization: "Corporate Events",
-      rating: 4,
-      image: "https://picsum.photos/400/300?random=2",
-    },
-
-    {
-      id: 3,
-      name: "Royal Moments",
-      specialization: "Birthday & Parties",
-      rating: 5,
-      image: "https://picsum.photos/400/300?random=3",
-    },
-  ];
-
   return (
-    <section className="top-managers">
+    <section className="manager-section">
 
-      <h2>Top Event Managers</h2>
+      <div className="manager-header">
 
-      <Row gutter={[24, 24]} justify="center">
+        <span className="manager-eyebrow">
+          Featured Studios
+        </span>
 
-        {managers.map((manager) => (
+        <h2 className="manager-title">
+          The creators behind unforgettable celebrations
+        </h2>
 
-          <Col xs={24} sm={12} md={8} key={manager.id}>
+        <p className="manager-subtitle">
+          Discover carefully selected event studios known for
+          exceptional execution, timeless aesthetics and
+          unforgettable experiences.
+        </p>
 
-            <Card
-              hoverable
-              cover={
+      </div>
+
+      <Row gutter={[24, 24]}>
+
+        {MANAGERS.map((manager) => (
+
+          <Col xs={24} md={12} lg={8} key={manager.id}>
+
+            <Link
+              to={manager.href}
+              className="manager-link"
+            >
+
+              <article className="manager-card">
+
                 <img
                   src={manager.image}
                   alt={manager.name}
+                  className="manager-image"
                 />
-              }
-            >
 
-              <h3>{manager.name}</h3>
+                <div className="manager-overlay" />
 
-              <p>{manager.specialization}</p>
+                <div className="manager-content">
 
-              <Rate disabled defaultValue={manager.rating} />
+                  <span className="manager-badge">
 
-              <Button
-                type="primary"
-                block
-                style={{ marginTop: "15px" }}
-              >
-                View Profile
-              </Button>
+                    {manager.count}
 
-            </Card>
+                  </span>
+
+                  <h3>
+
+                    {manager.name}
+
+                  </h3>
+
+                  <p>
+
+                    {manager.subtitle}
+
+                  </p>
+
+                  <div className="manager-arrow">
+
+                    View Portfolio
+
+                    <ArrowRightOutlined />
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </Link>
 
           </Col>
 

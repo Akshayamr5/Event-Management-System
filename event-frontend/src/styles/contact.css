@@ -1,0 +1,185 @@
+/* General Background */
+.contact-page-wrapper {
+  background: #0f0f12; /* Deep dark background */
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Hero Section */
+.contact-hero {
+  padding: 100px 20px 40px;
+  text-align: center;
+}
+
+.hero-title {
+  color: white !important;
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: #94a3b8 !important;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto !important;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  height: 100%;
+}
+
+.card-title {
+  color: white !important;
+  margin-bottom: 8px !important;
+}
+
+.card-desc {
+  color: #94a3b8 !important;
+  margin-bottom: 30px !important;
+}
+
+/* FIX: Info Grid Spacing */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Modern spacing instead of margins */
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(10px);
+}
+
+.info-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  font-size: 20px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  color: #64748b !important;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Form Styling */
+.premium-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 12px 15px !important;
+}
+
+.premium-input::placeholder {
+  color: #64748b !important;
+}
+
+.premium-input:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #6366f1, #a855f7) !important;
+  border: none !important;
+  height: 55px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  margin-top: 10px;
+  transition: all 0.3s ease !important;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Why Section */
+.section-title {
+  color: white !important;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #6366f1;
+}
+
+.feature-icon {
+  font-size: 32px;
+  color: #6366f1;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  color: white !important;
+  margin-bottom: 10px !important;
+}
+
+.feature-desc {
+  color: #94a3b8 !important;
+}
+
+/* Map Section */
+.map-card {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

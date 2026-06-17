@@ -1,86 +1,77 @@
 :root {
-
-    /* ==========================
+  /* ==========================
        Background Colors
     ========================== */
 
-    --bg-primary: #0B0B0B;
+  --bg-primary: #0b0b0b;
 
-    --bg-secondary: #121212;
+  --bg-secondary: #121212;
 
-    --bg-tertiary: #181818;
+  --bg-tertiary: #181818;
 
-    --bg-card: #202020;
+  --bg-card: #202020;
 
-    --bg-footer: #080808;
+  --bg-footer: #080808;
 
-
-    /* ==========================
+  /* ==========================
        Primary Colors
     ========================== */
 
-    --primary: #1677ff;
+  --primary: #1677ff;
 
-    --primary-hover: #4096ff;
+  --primary-hover: #4096ff;
 
-    --primary-light: #69b1ff;
+  --primary-light: #69b1ff;
 
-
-    /* ==========================
+  /* ==========================
        Text Colors
     ========================== */
 
-    --text-primary: #ffffff;
+  --text-primary: #ffffff;
 
-    --text-secondary: #bfbfbf;
+  --text-secondary: #bfbfbf;
 
-    --text-muted: #8c8c8c;
+  --text-muted: #8c8c8c;
 
-
-    /* ==========================
+  /* ==========================
        Border Colors
     ========================== */
 
-    --border: #2d2d2d;
+  --border: #2d2d2d;
 
-    --border-hover: #404040;
+  --border-hover: #404040;
 
-
-    /* ==========================
+  /* ==========================
        Status Colors
     ========================== */
 
-    --success: #52c41a;
+  --success: #52c41a;
 
-    --warning: #faad14;
+  --warning: #faad14;
 
-    --danger: #ff4d4f;
+  --danger: #ff4d4f;
 
-
-    /* ==========================
+  /* ==========================
        Shadows
     ========================== */
 
-    --shadow: 0 8px 25px rgba(0,0,0,.35);
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 
-    --shadow-hover: 0 12px 30px rgba(0,0,0,.45);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.45);
 
-
-    /* ==========================
+  /* ==========================
        Border Radius
     ========================== */
 
-    --radius-sm: 8px;
+  --radius-sm: 8px;
 
-    --radius-md: 12px;
+  --radius-md: 12px;
 
-    --radius-lg: 18px;
+  --radius-lg: 18px;
 
-
-    /* ==========================
+  /* ==========================
        Transition
     ========================== */
 
-    --transition: all 0.3s ease;
-
+  --transition: all 0.3s ease;
 }

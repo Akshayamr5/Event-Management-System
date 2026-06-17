@@ -7,9 +7,9 @@ const connectDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes");
 const eventRoutes = require("./src/routes/eventRoutes");
 const bookingRoutes = require("./src/routes/bookingRoutes");
+const superAdminRoutes = require("./src/routes/superAdminRoutes");
 
 dotenv.config();
-
 
 connectDB();
 
@@ -22,6 +22,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/superadmin", superAdminRoutes);
 
 // Home Route
 app.get("/", (req, res) => {

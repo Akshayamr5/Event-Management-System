@@ -22,13 +22,13 @@ function Footer() {
 
           <h3>Quick Links</h3>
 
-          <p>Home</p>
+          <p><a href="/">Home</a></p>
 
-          <p>Events</p>
+          <p><a href="./events">Events</a></p>
 
-          <p>Categories</p>
+          <p><a href="./organizers">Organizers</a></p>
 
-          <p>Contact</p>
+          <p><a href="./contact">Contact</a></p>
 
         </Col>
 

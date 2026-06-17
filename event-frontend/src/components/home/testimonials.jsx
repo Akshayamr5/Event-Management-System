@@ -24,14 +24,14 @@ function Testimonials() {
       name: "Vishnu",
       review:
         "Booking was simple and the event exceeded expectations.",
-      rating: 5,
+      rating: 4,
     },
   ];
 
   return (
     <section className="testimonials">
 
-      <h2>What Our Clients Say</h2>
+      <h2>Reviews</h2>
 
       <Row gutter={[24, 24]} justify="center">
 

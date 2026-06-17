@@ -1,137 +1,255 @@
-.top-managers {
+/* ==============================
+   Featured Studios
+============================== */
 
-    padding: 100px 80px;
+.manager-section{
 
-    background: var(--bg-secondary);
+    padding:100px 80px;
 
-}
-
-.top-managers h2 {
-
-    text-align: center;
-
-    margin-bottom: 60px;
-
-    font-size: 42px;
-
-    font-weight: 700;
-
-    color: var(--text-primary);
-
-    letter-spacing: 1px;
+    background:var(--bg-primary);
 
 }
 
-.top-managers img {
+/* ============================== */
 
-    width: 100%;
+.manager-header{
 
-    height: 260px;
+    max-width:700px;
 
-    object-fit: cover;
+    margin:auto;
 
-    transition: transform 0.4s ease;
+    text-align:center;
 
-}
-
-.top-managers .ant-card {
-
-    background: var(--bg-card);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    overflow: hidden;
-
-    box-shadow: var(--shadow);
-
-    transition: var(--transition);
-
-    height: 100%;
+    margin-bottom:60px;
 
 }
 
-.top-managers .ant-card:hover {
+.manager-eyebrow{
 
-    transform: translateY(-10px);
+    display:inline-block;
 
-    border-color: var(--primary);
+    text-transform:uppercase;
 
-    box-shadow: var(--shadow-hover);
+    letter-spacing:3px;
 
-}
+    font-size:12px;
 
-.top-managers .ant-card:hover img {
+    font-weight:600;
 
-    transform: scale(1.05);
+    color:var(--primary);
 
-}
-
-.top-managers .ant-card-body {
-
-    background: var(--bg-card);
-
-    padding: 25px;
-
-    text-align: center;
+    margin-bottom:18px;
 
 }
 
-.top-managers .ant-card-body h3 {
+.manager-title{
 
-    color: var(--text-primary);
+    font-size:clamp(2rem,3vw,3rem);
 
-    font-size: 22px;
+    color:var(--text-primary);
 
-    font-weight: 600;
+    font-weight:800;
 
-    margin-bottom: 10px;
+    line-height:1.15;
 
-}
-
-.top-managers .ant-card-body p {
-
-    color: var(--text-secondary);
-
-    margin-bottom: 15px;
-
-    font-size: 15px;
+    margin-bottom:18px;
 
 }
 
-.top-managers .ant-rate {
+.manager-subtitle{
 
-    color: #f5c542;
+    color:var(--text-secondary);
 
-    font-size: 18px;
+    line-height:1.8;
 
-    margin-bottom: 20px;
-
-}
-
-.top-managers .ant-btn {
-
-    border-radius: var(--radius-sm);
-
-    font-weight: 600;
-
-    transition: var(--transition);
+    font-size:15px;
 
 }
 
-.top-managers .ant-btn-primary {
+/* ============================== */
 
-    background: var(--primary);
+.manager-link{
 
-    border-color: var(--primary);
+    text-decoration:none;
 
 }
 
-.top-managers .ant-btn-primary:hover {
+/* ============================== */
 
-    background: var(--primary-hover) !important;
+.manager-card{
 
-    border-color: var(--primary-hover) !important;
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    aspect-ratio:4/5;
+
+    cursor:pointer;
+
+    background:#111;
+
+}
+
+/* ============================== */
+
+.manager-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+
+}
+
+.manager-card:hover .manager-image{
+
+    transform:scale(1.08);
+
+}
+
+/* ============================== */
+
+.manager-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    to top,
+
+    rgba(0,0,0,.92),
+
+    rgba(0,0,0,.35),
+
+    rgba(0,0,0,.05)
+
+    );
+
+}
+
+/* ============================== */
+
+.manager-content{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    padding:28px;
+
+    z-index:2;
+
+}
+
+.manager-badge{
+
+    display:inline-flex;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+}
+
+.manager-content h3{
+
+    margin-top:18px;
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.manager-content p{
+
+    margin-top:8px;
+
+    color:rgba(255,255,255,.72);
+
+    line-height:1.7;
+
+}
+
+.manager-arrow{
+
+    margin-top:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.manager-card:hover .manager-arrow{
+
+    gap:18px;
+
+}
+
+/* ============================== */
+
+@media(max-width:992px){
+
+.manager-section{
+
+padding:80px 40px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.manager-section{
+
+padding:70px 20px;
+
+}
+
+.manager-card{
+
+aspect-ratio:16/10;
+
+}
+
+.manager-content h3{
+
+font-size:24px;
+
+}
 
 }
